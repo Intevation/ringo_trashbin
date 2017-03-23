@@ -17,12 +17,12 @@ class TrashbinState(Statemachine):
 
 class TwoStepDelete(StateMixin):
 
-    """Mixin to change the the workflow how to delete items in two
-    steps. Using this Mixim will add two new actions named `erease` and
-    `restore`. The origin method `delete` will be changed in the way
-    that items will only be marked for deletion. This is similar to put
-    the item into a trashcan in the first step. From there the user can
-    decide to finally erease the item or restore it."""
+    """Extension to change the the workflow how to delete items in two
+    steps. Using this Extension will add two new actions named `trash`
+    and `restore`. The method `trash` will marked items for deletion.
+    This is similar to put the item into a trashcan in the first step.
+    From there the user can decide to finally detele the item or to
+    restore it."""
 
     # Attach the statemachines to an internal dictionary
     _statemachines = {'trash_state_id': TrashbinState}
